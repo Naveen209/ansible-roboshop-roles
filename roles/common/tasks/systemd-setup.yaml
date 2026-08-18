@@ -1,6 +1,6 @@
  - name: Copy {{component}} repo
    ansible.builtin.copy:
-    src: "{{componenet}}.service"
+    src: "{{component}}.service"
     dest: /etc/systemd/system/{{component}}.service
 
  - name: Daemon reload and start service
