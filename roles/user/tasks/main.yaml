@@ -1,11 +1,11 @@
 
 - name: Install nodejs
-  ansible.builtin.import:
+  ansible.builtin.import_role:
     name: common
     task_from: nodejs-setup
 
 - name: Setup application
-  ansible.builtin.import:
+  ansible.builtin.import_role:
     name: common
     task_from: app-setup
 
@@ -16,11 +16,11 @@
 
 
 - name: Daemon reload and start
-  ansible.builtin.import:
+  ansible.builtin.import_role:
     name: common
     task_from: daemon-setup
 
 - name: Loading schema
-  ansible.builtin.import:
+  ansible.builtin.import_role:
     name: common
     task_from: load-mongo-schema
