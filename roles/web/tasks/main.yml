@@ -22,7 +22,7 @@
 
 - name: setup reverse proxy connection
   ansible.builtin.copy:
-    src: web.service
+    src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
   notify:
   - restart nginx
