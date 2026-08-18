@@ -2,12 +2,12 @@
 - name: Install nodejs
   ansible.builtin.import_role:
     name: common
-    task_from: nodejs-setup
+    tasks_from: nodejs-setup
 
 - name: Setup application
   ansible.builtin.import_role:
     name: common
-    task_from: app-setup
+    tasks_from: app-setup
 
 - name: installing dependencies under /app directory
   ansible.builtin.command: 
@@ -15,12 +15,14 @@
     chdir: /app
 
 
-- name: Daemon reload and start
-  ansible.builtin.import_role:
-    name: common
-    task_from: daemon-setup
 
 - name: Loading schema
   ansible.builtin.import_role:
     name: common
-    task_from: load-mongo-schema
+    tasks_from: load-mongo-schema
+
+
+- name: Daemon reload and start
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: daemon-setup

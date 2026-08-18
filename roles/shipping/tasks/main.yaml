@@ -1,13 +1,13 @@
 - name: Installing maven and java 17
   ansible.builtin.import_role_role:
     name: command
-    task_from: maven-java
+    tasks_from: maven-java
 
 
 - name: Setup application
   ansible.builtin.import_role_role:
     name: common
-    task_from: app-setup
+    tasks_from: app-setup
 
 - name: install dependencies
   ansible.builtin.command:
@@ -22,4 +22,4 @@
 - name: Daemon reload and start
   ansible.builtin.import_role:
     name: common
-    task_from: systemd-setup
+    tasks_from: systemd-setup
