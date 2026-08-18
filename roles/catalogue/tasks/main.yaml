@@ -15,7 +15,7 @@
 - name: installing dependencies under /app directory
   ansible.builtin.command: 
     cmd: npm install
-    chdir: /app
+  chdir: /app
 
 - name: Daemon reload and start
   ansible.builtin.import:
