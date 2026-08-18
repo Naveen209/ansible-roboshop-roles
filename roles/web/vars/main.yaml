@@ -1,5 +1,5 @@
-CATALOGUE_HOST = catalogue.roboshopservice.store
-USER_HOST = user.roboshopservice.store
-CART_HOST= = cart.roboshopservice.store
-SHIPPING_HOST = shipping.roboshopservice.store
-PAYMENT_HOST = payment.roboshopservice.store
+CATALOGUE_HOST: catalogue.roboshopservice.store
+USER_HOST: user.roboshopservice.store
+CART_HOST: cart.roboshopservice.store
+SHIPPING_HOST: shipping.roboshopservice.store
+PAYMENT_HOST: payment.roboshopservice.store
