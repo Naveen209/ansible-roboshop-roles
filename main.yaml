@@ -1,0 +1,6 @@
+- name: Installing Roboshop project
+  hosts: "{{component}}"
+  become: yes
+  connection: ssh
+  roles:
+  - "{{component}}"

@@ -1,0 +1,8 @@
+- name: install java 17
+  ansible.builtin.yum:
+    name: java-17-openjdk-devel
+    state: present
+- name: install maven
+  ansible.builtin.yum:
+    name: maven
+    state: present

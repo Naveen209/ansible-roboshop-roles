@@ -1,0 +1,12 @@
+- name: Disable NodeJS
+  ansible.builtin.command:
+    cmd: dnf module disable nodejs -y
+
+- name: Enable nodejs 20
+  ansible.builtin.command:
+    cmd: dnf module enable nodejs:20 -y
+
+- name: Install nodejs
+  ansible.builtin.yum:
+    name: nodejs
+    state: present

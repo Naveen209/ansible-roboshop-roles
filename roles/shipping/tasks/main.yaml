@@ -1,0 +1,25 @@
+- name: Installing maven and java 17
+  ansible.builtin.import:
+    name: command
+    task_from: maven-java
+
+
+- name: Setup application
+  ansible.builtin.import:
+    name: common
+    task_from: app-setup
+
+- name: install dependencies
+  ansible.builtin.command:
+    cmd: mvn clean package
+    chdir: /app
+
+- name: Rename file using command module
+  ansible.builtin.command:
+    cmd: mv /app/target/shipping-1.0.jar shipping.jar
+    chdir: /app
+
+- name: Daemon reload and start
+  ansible.builtin.import:
+    name: common
+    task_from: systemd-setup

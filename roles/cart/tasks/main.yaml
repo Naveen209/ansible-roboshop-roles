@@ -1,0 +1,20 @@
+- name: Install nodejs
+  ansible.builtin.import:
+    name: common
+    task_from: nodejs-setup
+
+- name: Setup application
+  ansible.builtin.import:
+    name: common
+    task_from: app-setup
+
+- name: installing dependencies under /app directory
+  ansible.builtin.command: 
+    cmd: npm install
+    chdir: /app
+
+
+- name: Daemon reload and start
+  ansible.builtin.import:
+    name: common
+    task_from: daemon-setup
