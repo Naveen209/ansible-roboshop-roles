@@ -26,6 +26,3 @@
     dest: /etc/nginx/default.d/roboshop.conf
   notify:
   - restart nginx
-
-- name: network connect
-  ansible.builtin.command:  sudo setsebool -P httpd_can_network_connect 1
